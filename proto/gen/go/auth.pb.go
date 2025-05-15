@@ -219,7 +219,7 @@ const file_auth_proto_rawDesc = "" +
 	"\n" +
 	"SendNumber\x12\x17.auth.SendNumberRequest\x1a\x18.auth.SendNumberResponse\x12?\n" +
 	"\n" +
-	"VerifyCode\x12\x17.auth.VerifyCodeRequest\x1a\x18.auth.VerifyCodeResponseB\x18Z\x16app/internal/proto/genb\x06proto3"
+	"VerifyCode\x12\x17.auth.VerifyCodeRequest\x1a\x18.auth.VerifyCodeResponseB>Z<github.com/katherinevse/orchid_protos/proto/gen/go/auth;authb\x06proto3"
 
 var (
 	file_auth_proto_rawDescOnce sync.Once
