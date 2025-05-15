@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "app/internal/proto/auth";
+
+service AuthService {
+  // Получение номера телефона от Медцентра для отправки кода
+  rpc SendNumber(SendNumberRequest) returns (SendNumberResponse);
+
+  // Проверка кода, который ввел пользователь на сайте Медцентра
+  rpc VerifyCode(VerifyCodeRequest) returns (VerifyCodeResponse);
+}
+
+// Запрос на отправку кода
+message SendNumberRequest {
+  string phone_number = 1; // Номер телефона пользователя
+}
+
+// Ответ на запрос получения кода
+message SendNumberResponse {}
+
+// Запрос на проверку кода (от Медцентра к Авторизатору)
+message VerifyCodeRequest {
+  string phone_number = 1; // Номер телефона
+  string code = 2;         // Код, введенный пользователем в форму
+}
+
+// Ответ на проверку кода
+message VerifyCodeResponse {
+  bool success = 1;        // Успех проверки (true/false)
+}
